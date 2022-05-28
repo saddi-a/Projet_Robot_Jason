@@ -1,19 +1,24 @@
+from lib2to3.pgen2.pgen import DFAState
 import re
 import time
 from Camera import Camera
 from Motor import Motor
+from Ultrasonic import Ultrasonic
 
 if __name__ == '__main__':
     m=Motor()
     c=Camera()
+    u=Ultrasonic()
 
     while(1):
         c.readLight()
+        u.measure()
         print("The traficlight color is :",c.trafficlightColor)
+        print("The distance is:",u.distance)
 
-        if (c.trafficlightColor=='red'):
+        if (c.trafficlightColor=='red' or u.distance<10):
             m.stop()
-        elif(c.trafficlightColor=='orange'):
+        elif(c.trafficlightColor=='orange' or u.distance<20):
             m.setSpeed(20)
             m.forward()
         elif(c.trafficlightColor=='green'):

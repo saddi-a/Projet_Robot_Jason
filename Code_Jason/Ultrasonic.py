@@ -7,7 +7,7 @@ class Ultrasonic:
         self.trig=23
         self.echo=24
         self.setup()
-        self.distance=None
+        self.distance=self.measure()
         #distance in cm
     
     def setup(self):

@@ -105,8 +105,8 @@ class Motor:
 		self.motor1(self.backward1)
 
 	def stop(self):
-		for pin in self.pins:
-			GPIO.output(pin, GPIO.LOW)
+		self.setSpeed(0)
+
 
 	# # ===========================================================================
 	# # The first parameter(status) is to control the state of the car, to make it 
