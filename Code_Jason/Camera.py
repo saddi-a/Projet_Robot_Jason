@@ -36,18 +36,18 @@ class Camera:
 		# Filter size for morphological transformation
 		self.kernal = np.ones((5, 5), "uint8") 
 
-		self.traficlightColor="not read"
+		self.trafficlightColor="not read"
 		
-
+	#function to use
 	def readLight(self):
 		#Read the frame
-		self.readFrame()
+		self.readFrame() #step1
 
 		#Setup color masks
-		self.setMask()
+		self.setMask() #step2
 
 		#Reading traficlight color
-		self.readColor()
+		self.readColor() #step3
 		
 
 	def readFrame(self):
@@ -107,6 +107,7 @@ class Camera:
 			if(area > 300): 
 				color="red"
 
-		print("The traficlight color is :",color)
-		self.traficlightColor="not read"
+		#print("The traficlight color is :",color)
+		
+		self.trafficlightColor="not read"
 
