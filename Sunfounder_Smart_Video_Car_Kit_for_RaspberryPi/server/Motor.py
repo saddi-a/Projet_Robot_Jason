@@ -104,7 +104,7 @@ class Motor:
 		self.motor0(self.backward0)
 		self.motor1(self.backward1)
 
-	def stop():
+	def stop(self):
 		for pin in pins:
 			GPIO.output(pin, GPIO.LOW)
 
