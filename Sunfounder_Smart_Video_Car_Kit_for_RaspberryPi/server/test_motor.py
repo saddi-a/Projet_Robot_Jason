@@ -8,7 +8,7 @@ import time    # Import necessary modules
 
 if __name__ == '__main__':
 	m=Motor()
-	m.setSpeed(10)
+	m.setSpeed(1)
 	m.forward()
 	time.sleep(3)
 	m.backward()
