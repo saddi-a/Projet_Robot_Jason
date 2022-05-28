@@ -4,8 +4,8 @@ import time
 class Ultrasonic:
 
     def __init__(self):
-        self.trig=5
-        self.echo=6
+        self.trig=31#gpio6
+        self.echo=29#gpio5
         self.setup()
         self.distance=self.measure()
         #distance in cm

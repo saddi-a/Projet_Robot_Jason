@@ -5,7 +5,7 @@ import time  # permet des pause pour l'affichage de feux
 GPIO.setwarnings(False) # annulation des interruption
 GPIO.cleanup()
 
-GPIO.setmode(GPIO.BCM) # affectation des pin
+GPIO.setmode(GPIO.BOARD) # affectation des pin
 
 class Feutricolore:
     def __init__(self,Rouge,Orange,Vert):
@@ -31,13 +31,13 @@ class Feutricolore:
         GPIO.output(self.Orange,GPIO.LOW)
         GPIO.output(self.Vert,GPIO.HIGH)
 
-F1_Vert=16
-F1_Orange=20
-F1_Rouge=21
+F1_Vert=36#gpio16
+F1_Orange=38#gpio20
+F1_Rouge=40#gpio21
 
-F2_Vert=13
-F2_Orange=19
-F2_Rouge=26
+F2_Vert=33#gpio13
+F2_Orange=35#gpio19
+F2_Rouge=37#gpio26
 
 F1 = Feutricolore(F1_Rouge,F1_Orange,F1_Vert)
 F2 = Feutricolore(F2_Rouge,F2_Orange,F2_Vert)  
