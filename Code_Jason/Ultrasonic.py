@@ -11,8 +11,8 @@ class Ultrasonic:
         #distance in cm
     
     def setup(self):
-        GPIO.setmode(GPIO.BCM)
-        GPIO.setwarnings(False)
+        # GPIO.setmode(GPIO.BCM)
+        # GPIO.setwarnings(False)
         GPIO.setup(self.trig,GPIO.OUT)
         GPIO.setup(self.echo,GPIO.IN)
         GPIO.output(self.trig, False)
