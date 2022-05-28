@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import RPi.GPIO as GPIO
 import PCA9685 as p
-import Motor
+from Motor import Motor
 import time    # Import necessary modules
 
 
