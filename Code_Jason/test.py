@@ -1,6 +1,5 @@
-from lib2to3.pgen2.pgen import DFAState
-
 import time
+import RPi.GPIO as GPIO
 from Camera import Camera
 from Motor import Motor
 from Ultrasonic import Ultrasonic
@@ -31,6 +30,7 @@ if __name__ == '__main__':
 
         time.sleep(0.1)
 
-
+    GPIO.cleanup()
+    GPIO.setwarnings(True)
 
 
