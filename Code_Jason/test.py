@@ -10,7 +10,7 @@ if __name__ == '__main__':
     c=Camera()
     u=Ultrasonic()
 
-    while(1):
+    for i in range(200) :
         c.readLight()
         u.measure()
         print("The traficlight color is :",c.trafficlightColor)
@@ -29,7 +29,7 @@ if __name__ == '__main__':
             m.forward()
 
 
-        time.sleep(0.3)
+        time.sleep(0.1)
 
 
 
