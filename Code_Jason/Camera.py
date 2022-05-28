@@ -84,6 +84,7 @@ class Camera:
 	
 			
 	def readColor(self) :
+		self.trafficlightColor="not read"
 		
 		# Creating contour to track green color 
 		contours, _ = cv2.findContours(self.green_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE) 
@@ -92,7 +93,7 @@ class Camera:
 			area = cv2.contourArea(contour) 
 			if(area > 300): 
 				self.trafficlightColor ="green"
-				
+
 		# Creating contour to track orange color 
 		contours, _ = cv2.findContours(self.orange_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE) 
 		for _, contour in enumerate(contours): 
@@ -110,5 +111,5 @@ class Camera:
 
 		#print("The traficlight color is :",color)
 		
-		self.trafficlightColor="not read"
+		
 
