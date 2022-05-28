@@ -42,7 +42,7 @@ F2_Rouge=26
 F1 = Feutricolore(F1_Rouge,F1_Orange,F1_Vert)
 F2 = Feutricolore(F2_Rouge,F2_Orange,F2_Vert)  
 
-periode = 1 #duree d une periode en seconde
+periode = 2 #duree d une periode en seconde
 
 duree_vert_rouge=6/periode# duree en seconde
 duree_rouge_orange=2/periode
