@@ -44,7 +44,7 @@ class Motor:
 	# the servo driver IC, so as to control the speed of the car.
 	# ===========================================================================
 	def setSpeed(self,speed):
-		self.speed *= speed*40
+		self.speed = speed*40
 		print('speed is: ', self.speed)
 		self.pwm.write(self.EN_M0, 0, self.speed)
 		self.pwm.write(self.EN_M1, 0, self.speed)
@@ -80,21 +80,21 @@ class Motor:
 
 	def motor0(self,x):
 		if x == 'True':
-			GPIO.output(self.Motor0_A, GPIO.LOW)
-			GPIO.output(self.Motor0_B, GPIO.HIGH)
-		elif x == 'False':
 			GPIO.output(self.Motor0_A, GPIO.HIGH)
 			GPIO.output(self.Motor0_B, GPIO.LOW)
+		elif x == 'False':
+			GPIO.output(self.Motor0_A, GPIO.LOW)
+			GPIO.output(self.Motor0_B, GPIO.HIGH)
 		else:
 			print('Config Error')
 
 	def motor1(self,x):
 		if x == 'True':
-			GPIO.output(self.Motor1_A, GPIO.LOW)
-			GPIO.output(self.Motor1_B, GPIO.HIGH)
-		elif x == 'False':
 			GPIO.output(self.Motor1_A, GPIO.HIGH)
 			GPIO.output(self.Motor1_B, GPIO.LOW)
+		elif x == 'False':
+			GPIO.output(self.Motor1_A, GPIO.LOW)
+			GPIO.output(self.Motor1_B, GPIO.HIGH)
 
 	def forward(self):
 		self.motor0(self.forward0)
