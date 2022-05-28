@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+
 from Camera import Camera
 import time    # Import necessary modules
 
