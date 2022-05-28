@@ -62,7 +62,7 @@ class Motor:
 					self.forward1 = line[11:-1]
 		except:
 			pass
-		if self.self.forward0 == 'True':
+		if self.forward0 == 'True':
 			self.backward0 = 'False'
 		elif self.forward0 == 'False':
 			self.backward0 = 'True'
