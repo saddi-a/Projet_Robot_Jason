@@ -103,6 +103,4 @@ while True :
     
     time.sleep(periode)
     
-GPIO.cleanup()
-GPIO.setwarnings(True)
 

@@ -1,5 +1,5 @@
 from lib2to3.pgen2.pgen import DFAState
-import re
+
 import time
 from Camera import Camera
 from Motor import Motor
