@@ -22,6 +22,7 @@ class Line:
         else:
             self.right=False
         if(GPIO.input(self.pinleft)==1):
-            self.right=True
+            self.left=True
         else:
-            self.right=False   
+            self.left=False   
+
