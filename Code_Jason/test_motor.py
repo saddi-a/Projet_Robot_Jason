@@ -15,7 +15,7 @@ if __name__ == '__main__':
 	m.turnLeft()
 	time.sleep(2)
 	m.turnRight()
-	time.sleep(2)
+	time.sleep(0.1)
 	m.turnCenter()
 	time.sleep(2)
 	m.setSpeed(50)

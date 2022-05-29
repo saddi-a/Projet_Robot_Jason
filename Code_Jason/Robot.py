@@ -30,11 +30,11 @@ class Robot:
         else:
             self.turn()
             if(self.camera.trafficlightColor=='orange' or  self.ultrasonic.distance<20):
-                self.motor.setSpeed(20)
+                self.motor.setSpeed(30)
             elif(self.camera.trafficlightColor=='green'):
                 self.motor.setSpeed(50)
             else:
-                self.motor.setSpeed(30)
+                self.motor.setSpeed(40)
             self.motor.forward()
 
 
