@@ -46,6 +46,7 @@ class Robot:
         if(self.line.right==self.line.right):
             self.motor.turnCenter()
             print("turn center")
+            print(self.line.right==self.line.right)
         elif(self.line.right==0):
             self.motor.turnRight()
             print("turn right")
