@@ -60,7 +60,7 @@ class Motor:
 		self.pwm.frequency = 60
 		for pin in self.pins:
 			GPIO.setup(pin, GPIO.OUT)   # Set all pins' mode as output
-		self.turn_center()
+		self.turnCenter()
 
 	# ===========================================================================
 	# Control the DC motor to make it rotate clockwise, so the car will 
