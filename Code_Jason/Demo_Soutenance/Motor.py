@@ -48,7 +48,7 @@ class Motor:
 	# the servo driver IC, so as to control the speed of the car.
 	# ===========================================================================
 	def setSpeed(self,speed):
-		self.speed = speed*35
+		self.speed = speed*45
 		print('speed is: ', self.speed)
 		self.pwm.write(self.EN_M0, 0, self.speed)
 		self.pwm.write(self.EN_M1, 0, self.speed)
