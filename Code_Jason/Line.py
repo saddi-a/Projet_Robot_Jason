@@ -17,6 +17,6 @@ class Line:
         self.read()
     
     def read(self):
-        self.right=GPIO.input(self.pinright)
-        self.left=GPIO.input(self.pinleft)
+        self.right=int(GPIO.input(self.pinright))
+        self.left=int(GPIO.input(self.pinleft))
         
