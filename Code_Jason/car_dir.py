@@ -68,7 +68,14 @@ def test():
 
 if __name__ == '__main__':
 	setup()
-	turn(10)
+	input("press a key to start")
+	a=[360,430,500]
+	for i in a:
+		pwm.write(0, 0, i)
+		print(i)
+		time.sleep(4)
+	setup()
+
 
 
 

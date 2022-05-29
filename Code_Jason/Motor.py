@@ -23,6 +23,7 @@ class Motor:
 		# # ===========================================================================
 		self.EN_M0    = 4  # servo driver IC CH4
 		self.EN_M1    = 5  # servo driver IC CH5
+		self.stearingChanel = 0 # servo driver IC CH0
 
 		self.pins = [self.Motor0_A, self.Motor0_B, self.Motor1_A, self.Motor1_B]
 
@@ -33,7 +34,10 @@ class Motor:
 		self.speed = 25
 		self.pwm = p.PWM()                  # Initialize the servo controller.
 
-
+		self.rightStearing=500
+		self.leftStearing=430
+		self.centertStearing=430
+		
 		self.setup()
 
 
@@ -51,27 +55,13 @@ class Motor:
 
 	def setup(self):
 
-		self.pwm.frequency = 60
 		GPIO.setwarnings(False)
 		GPIO.setmode(GPIO.BOARD)        # Number GPIOs by its physical location
-		try:
-			for line in open("config"):
-				if line[0:8] == "forward0":
-					self.forward0 = line[11:-1]
-				if line[0:8] == "forward1":
-					self.forward1 = line[11:-1]
-		except:
-			pass
-		if self.forward0 == 'True':
-			self.backward0 = 'False'
-		elif self.forward0 == 'False':
-			self.backward0 = 'True'
-		if self.forward1 == 'True':
-			self.backward1 = 'False'
-		elif self.forward1 == 'False':
-			self.backward1 = 'True'
+		self.pwm.frequency = 60
 		for pin in self.pins:
 			GPIO.setup(pin, GPIO.OUT)   # Set all pins' mode as output
+		self.turn_center()
+		self.stop()
 
 	# ===========================================================================
 	# Control the DC motor to make it rotate clockwise, so the car will 
@@ -107,6 +97,14 @@ class Motor:
 	def stop(self):
 		self.setSpeed(0)
 
+	def turn_right(self):
+		self.pwm.write(self.stearingChanel, 0, self.rightStearing)
+
+	def turn_left(self):
+		self.pwm.write(self.stearingChanel, 0, self.leftStearing)
+		
+	def turn_center(self):
+		self.pwm.write(self.stearingChanel, 0, self.centertStearing)
 
 	# # ===========================================================================
 	# # The first parameter(status) is to control the state of the car, to make it 
