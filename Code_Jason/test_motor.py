@@ -21,7 +21,7 @@ if __name__ == '__main__':
 	m.setSpeed(50)
 	m.turn_right()
 	m.forward()
-	time.sleep(1)
+	time.sleep(2)
 	m.stop()
 
 
