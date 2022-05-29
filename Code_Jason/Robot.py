@@ -1,8 +1,9 @@
-import time
-import RPi.GPIO as GPIO
 from Camera import Camera
 from Motor import Motor
 from Ultrasonic import Ultrasonic
+from Line import Line
+import RPi.GPIO as GPIO
+import time
 
 class Robot:
 
@@ -11,6 +12,7 @@ class Robot:
         self.motor=Motor()
         self.camera=Camera()
         self.ultrasonic=Ultrasonic()
+        self.line=Line()
 
     
     def readSensors(self):
@@ -18,6 +20,9 @@ class Robot:
         print("The traficlight color is :",self.camera.trafficlightColor)
         self.ultrasonic.measure()
         print("The distance is:", self.ultrasonic.distance)
+        self.line.read()
+        print("Right sensor is :",self.line.right)
+        print("Left sensor is :",self.line.left)
 
     def move(self):
 
