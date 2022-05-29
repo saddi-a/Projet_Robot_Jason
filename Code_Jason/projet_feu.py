@@ -103,5 +103,7 @@ for i in range(200) :
     
     time.sleep(periode)
     print(i)
+    GPIO.cleanup()
+    GPIO.setwarnings(True)
     
 
