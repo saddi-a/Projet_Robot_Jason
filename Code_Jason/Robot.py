@@ -21,24 +21,20 @@ class Robot:
 
     def move(self):
 
-        for i in range(200) :
-
-            if (self.camera.trafficlightColor=='red' or  self.ultrasonic.distance<10):
-                self.motor.stop()
-            elif(self.camera.trafficlightColor=='orange' or  self.ultrasonic.distance<20):
-                self.motor.setSpeed(20)
-                self.motor.forward()
-            elif(self.camera.trafficlightColor=='green'):
-                self.motor.setSpeed(50)
-                self.motor.forward()
-            else:
-                self.motor.setSpeed(30)
-                self.motor.forward()
+        if (self.camera.trafficlightColor=='red' or  self.ultrasonic.distance<10):
+            self.motor.stop()
+        elif(self.camera.trafficlightColor=='orange' or  self.ultrasonic.distance<20):
+            self.motor.setSpeed(20)
+            self.motor.forward()
+        elif(self.camera.trafficlightColor=='green'):
+            self.motor.setSpeed(50)
+            self.motor.forward()
+        else:
+            self.motor.setSpeed(30)
+            self.motor.forward()
 
 
-            time.sleep(0.1)
-            print(i)
-
+    def clean(self):
         GPIO.cleanup()
         GPIO.setwarnings(True)
 
