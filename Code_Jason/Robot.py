@@ -24,11 +24,11 @@ class Robot:
         print("Left sensor is :",self.line.left)
 
     def move(self):
-        if (self.camera.trafficlightColor=='red' or  self.ultrasonic.distance<10):
+        if (self.camera.trafficlightColor=='red' or  self.ultrasonic.distance<20):
             self.motor.stop()
         else:
             self.turn()
-            if(self.camera.trafficlightColor=='orange' or  self.ultrasonic.distance<20):
+            if(self.camera.trafficlightColor=='orange' or  self.ultrasonic.distance<40):
                 self.motor.setSpeed(30)
             elif(self.camera.trafficlightColor=='green'):
                 self.motor.setSpeed(50)
