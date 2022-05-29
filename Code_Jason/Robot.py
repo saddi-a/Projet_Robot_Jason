@@ -43,14 +43,14 @@ class Robot:
         GPIO.setwarnings(True)
     
     def turn(self):
-        if(self.line.right==self.line.right):
+        if not(self.line.right ^ self.line.right):
             self.motor.turnCenter()
             print("turn center")
             print(self.line.right==self.line.right)
-        elif(self.line.right==0):
+        elif(self.line.left):
             self.motor.turnRight()
             print("turn right")
-        elif(self.line.left==0):
+        elif(self.line.right):
             self.motor.turnLeft()
             print("turn left")
 
