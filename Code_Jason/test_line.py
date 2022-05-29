@@ -9,7 +9,7 @@ if __name__ == '__main__':
     for i in range(200) :
         l.read()
         print("Right sensor is :",l.right)
-        print("Right sensor is :",l.left)
+        print("Left sensor is :",l.left)
 
         time.sleep(0.1)
         print(i)
