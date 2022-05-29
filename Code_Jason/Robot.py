@@ -45,8 +45,11 @@ class Robot:
     def turn(self):
         if(self.line.right==self.line.right):
             self.motor.turnCenter()
+            print("turn center")
         elif(self.line.right==0):
             self.motor.turnRight()
+            print("turn right")
         elif(self.line.left==0):
             self.motor.turnLeft()
+            print("turn left")
 
