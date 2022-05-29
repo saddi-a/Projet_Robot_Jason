@@ -40,10 +40,10 @@ class Robot:
     def turn(self):
 
         if (self.line.right != self.line.right):
-            if(self.line.left):
+            if(self.line.left==1):
                 self.motor.turnRight()
                 print("turn right")
-            elif(self.line.right):
+            elif(self.line.right==1):
                 self.motor.turnLeft()
                 print("turn left")
         else:
