@@ -3,7 +3,6 @@ from Motor import Motor
 from Ultrasonic import Ultrasonic
 from Line import Line
 import RPi.GPIO as GPIO
-import time
 
 class Robot:
 
@@ -37,20 +36,21 @@ class Robot:
                 self.motor.setSpeed(40)
             self.motor.forward()
 
+    
+    def turn(self):
+
+        if (self.line.right != self.line.right):
+            if(self.line.left):
+                self.motor.turnRight()
+                print("turn right")
+            elif(self.line.right):
+                self.motor.turnLeft()
+                print("turn left")
+        else:
+            self.motor.turnCenter()
+            print("turn center")
+            print(self.line.right==self.line.right)
 
     def clean(self):
         GPIO.cleanup()
         GPIO.setwarnings(True)
-    
-    def turn(self):
-        if not(self.line.right ^ self.line.right):
-            self.motor.turnCenter()
-            print("turn center")
-            print(self.line.right==self.line.right)
-        elif(self.line.left):
-            self.motor.turnRight()
-            print("turn right")
-        elif(self.line.right):
-            self.motor.turnLeft()
-            print("turn left")
-

@@ -5,8 +5,8 @@ class Line:
     def __init__(self):
         self.pinright=16#gpio23
         self.pinleft=18#gpio24
-        self.right=None
-        self.left=None
+        self.right=False
+        self.left=False
         self.setup()
 
     def setup(self):
