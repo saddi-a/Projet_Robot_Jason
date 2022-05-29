@@ -95,14 +95,15 @@ class Motor:
 
 	def stop(self):
 		self.setSpeed(0)
+		self.tur
 
-	def turn_right(self):
+	def turnRight(self):
 		self.pwm.write(self.stearingChanel, 0, self.rightStearing)
 
-	def turn_left(self):
+	def turnLeft(self):
 		self.pwm.write(self.stearingChanel, 0, self.leftStearing)
 		
-	def turn_center(self):
+	def turnCenter(self):
 		self.pwm.write(self.stearingChanel, 0, self.centertStearing)
 
 	# # ===========================================================================
