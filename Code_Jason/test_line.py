@@ -6,7 +6,7 @@ import time
 if __name__ == '__main__':
     l=Line()
 
-    for i in range(200) :
+    for i in range(400) :
         l.read()
         print("Right sensor is :",l.right)
         print("Left sensor is :",l.left)
@@ -14,5 +14,3 @@ if __name__ == '__main__':
         time.sleep(0.1)
         print(i)
 
-    GPIO.cleanup()
-    GPIO.setwarnings(True)
