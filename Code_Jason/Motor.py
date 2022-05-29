@@ -50,8 +50,6 @@ class Motor:
 	def setSpeed(self,speed):
 		self.speed = speed*10
 		print('speed is: ', self.speed)
-		self.pwm.write(self.EN_M0, 0, self.speed)
-		self.pwm.write(self.EN_M1, 0, self.speed)
 
 	def setup(self):
 
