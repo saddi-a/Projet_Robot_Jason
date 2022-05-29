@@ -36,20 +36,18 @@ class Robot:
                 self.motor.setSpeed(40)
             self.motor.forward()
 
-    
     def turn(self):
-
-        if (self.line.right != self.line.right):
-            if(self.line.left==1):
-                self.motor.turnRight()
-                print("turn right")
-            elif(self.line.right==1):
-                self.motor.turnLeft()
-                print("turn left")
-        else:
+        if((self.line.right ==1 and self.line.left==1) or (self.line.right ==0 and self.line.left==0)):
             self.motor.turnCenter()
-            print("turn center")
-            print(self.line.right==self.line.right)
+            print("steer  center")
+        elif(self.line.right ==0):
+            self.motor.turnRight()
+            print("steer  right")
+        else:
+            self.motor.turnLeft()
+            print("steer  left")
+
+
 
     def clean(self):
         GPIO.cleanup()
