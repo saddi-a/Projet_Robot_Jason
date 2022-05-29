@@ -25,21 +25,28 @@ class Robot:
         print("Left sensor is :",self.line.left)
 
     def move(self):
-
         if (self.camera.trafficlightColor=='red' or  self.ultrasonic.distance<10):
             self.motor.stop()
-        elif(self.camera.trafficlightColor=='orange' or  self.ultrasonic.distance<20):
-            self.motor.setSpeed(20)
-            self.motor.forward()
-        elif(self.camera.trafficlightColor=='green'):
-            self.motor.setSpeed(50)
-            self.motor.forward()
         else:
-            self.motor.setSpeed(30)
+            self.turn()
+            if(self.camera.trafficlightColor=='orange' or  self.ultrasonic.distance<20):
+                self.motor.setSpeed(20)
+            elif(self.camera.trafficlightColor=='green'):
+                self.motor.setSpeed(50)
+            else:
+                self.motor.setSpeed(30)
             self.motor.forward()
 
 
     def clean(self):
         GPIO.cleanup()
         GPIO.setwarnings(True)
+    
+    def turn(self):
+        if(self.line.right==self.line.right):
+            self.motor.turnCenter()
+        elif(self.line.right==0):
+            self.motor.turnRight()
+        elif(self.line.left==0):
+            self.motor.turnLeft()
 
