@@ -95,7 +95,7 @@ class Motor:
 
 	def stop(self):
 		self.setSpeed(0)
-		self.tur
+		self.turnCenter()
 
 	def turnRight(self):
 		self.pwm.write(self.stearingChanel, 0, self.rightStearing)
