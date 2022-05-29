@@ -34,9 +34,9 @@ class Motor:
 		self.speed = 25
 		self.pwm = p.PWM()                  # Initialize the servo controller.
 
-		self.rightStearing=490
-		self.leftStearing=350
-		self.centertStearing=420
+		self.rightStearing=480
+		self.leftStearing=340
+		self.centertStearing=410
 		
 		self.setup()
 
