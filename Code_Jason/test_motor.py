@@ -12,7 +12,6 @@ if __name__ == '__main__':
 	m.backward()
 	time.sleep(3)
 	m.stop()
-	time.sleep(3)
 	m.turn_left()
 	time.sleep(3)
 	m.turn_right()

@@ -34,9 +34,9 @@ class Motor:
 		self.speed = 25
 		self.pwm = p.PWM()                  # Initialize the servo controller.
 
-		self.rightStearing=500
-		self.leftStearing=430
-		self.centertStearing=430
+		self.rightStearing=490
+		self.leftStearing=350
+		self.centertStearing=420
 		
 		self.setup()
 
@@ -48,7 +48,7 @@ class Motor:
 	# the servo driver IC, so as to control the speed of the car.
 	# ===========================================================================
 	def setSpeed(self,speed):
-		self.speed = speed*20
+		self.speed = speed*15
 		print('speed is: ', self.speed)
 		self.pwm.write(self.EN_M0, 0, self.speed)
 		self.pwm.write(self.EN_M1, 0, self.speed)
