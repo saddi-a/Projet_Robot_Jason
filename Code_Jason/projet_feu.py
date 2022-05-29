@@ -56,7 +56,7 @@ phase = 'F1r_F2r2' #'F1r_F2v' 'F1r_F2o' , 'F1r_F2r1', 'F1v_F2r','F1o_F2v'
 #pinBtn = 12
 #GPIO.setup(pinBtn, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
-for i in range(10) :
+for i in range(200) :
 
     if (phase == 'F1r_F2v'):
         nb_count -= 1
