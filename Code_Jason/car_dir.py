@@ -68,7 +68,7 @@ def test():
 
 if __name__ == '__main__':
 	setup()
-	home()
+	turn(10)
 
 
 
