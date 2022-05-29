@@ -67,7 +67,7 @@ class Motor:
 	# move forward.
 	# ===========================================================================
 
-	def motor0(self,x):
+	def motor0(self):
 		if self.forward0 == 'True':
 			GPIO.output(self.Motor0_A, GPIO.HIGH)
 			GPIO.output(self.Motor0_B, GPIO.LOW)
@@ -77,7 +77,7 @@ class Motor:
 		else:
 			print('Config Error')
 
-	def motor1(self,x):
+	def motor1(self):
 		if self.forward1 == 'True':
 			GPIO.output(self.Motor1_A, GPIO.HIGH)
 			GPIO.output(self.Motor1_B, GPIO.LOW)
